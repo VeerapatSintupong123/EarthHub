@@ -10,10 +10,11 @@
 </head>
 <body>
     <div class="nav-bar">
-        <a>Home</a>
+        <a href="{% url 'home' %}">Home</a>
         <a>Course</a>
         <a>About</a>
-        <a>Sign Up / Log in</a>
+        <a href="{% url 'sign-up' %}">Sign Up</a>
+        <a>Log in</a>
     </div>
     {% block content %}
     {% endblock %}

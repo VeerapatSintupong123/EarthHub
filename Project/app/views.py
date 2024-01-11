@@ -1,7 +1,18 @@
-from django.template import loader
-from django.http import HttpResponse
+from .forms import RegisterForm
+from django.shortcuts import render, redirect
 
 
 def home(request):
-    template = loader.get_template("home.html")
-    return HttpResponse(template.render())
+    return render(request, "home.html")
+
+
+def sign_up(request):
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/")
+    else:
+        form = RegisterForm()
+
+    return render(request, "sign-up.html", {"form": form})
