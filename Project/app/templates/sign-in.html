@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'sign-up.css' %}">
+    <h1>Sign In</h1>
+    <form method="POST" action="{% url 'sign-in' %}">
+        {% csrf_token %}  
+        <label>Username</label>
+        <input type="text" name="username">
+        <label>Password</label>
+        <input type="text" name="password">
+        <button type="submit">Sign in</button>
+    </form>
+{% endblock %}
