@@ -13,7 +13,6 @@ def home(request):
 def log_out(request):
     if request.user.is_authenticated:
         logout(request)
-
     response = redirect("home")
     response["Cache-Control"] = "no-cache, no-store, must-revalidate"
     return response
@@ -28,11 +27,9 @@ def sign_in(request):
             username=username,
             password=password,
         )
-
         if user is not None:
             login(request, user)
             return redirect("home")
-
     return render(request, "sign-in.html")
 
 
@@ -44,5 +41,4 @@ def sign_up(request):
             return redirect("home")
     else:
         form = RegisterForm()
-
-    return render(request, "sign-up.html", {"form": form})
+    return render(request, "sign-up.html", {"form": form, "username": None})

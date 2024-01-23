@@ -15,10 +15,7 @@
         <a>About</a>
         <a href="{% url 'sign-up' %}">Sign up</a>
         <a href="{% url 'sign-in' %}">Sign in</a>
-        <a href="{% url 'sign-in' %}">Log out</a>
-        {% if username %}
-        <a>{{ username }}</a>
-        {% endif %}
+        <a href="{% url 'log-out' %}">Log out</a>
     </div>
     {% block content %}
     {% endblock %}
