@@ -2,14 +2,22 @@
 {% load static %}
 
 {% block content %}
-    <link rel="stylesheet" href="{% static 'sign-up.css' %}">
+    <link rel="stylesheet" href="{% static 'sign-in.css' %}">
     <h1>Sign In</h1>
-    <form method="POST" action="{% url 'sign-in' %}">
+    <div class="pre-view">
+        <img src="{% static 'catGif2.gif' %}" alt="cat">
+    </div>
+    <form method="POST" action="{% url 'sign-in' %}" class="two-row-form">
         {% csrf_token %}  
-        <label>Username</label>
-        <input type="text" name="username">
-        <label>Password</label>
-        <input type="text" name="password">
+        <div class="form-row">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
+        </div>
+        <div class="form-row">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+        </div>
         <button type="submit">Sign in</button>
     </form>
+    <p>Or you want <a href="{% url 'sign-up' %}">sign-up</a></p>
 {% endblock %}

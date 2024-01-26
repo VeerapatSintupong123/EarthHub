@@ -1,0 +1,13 @@
+.flex-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.sign-up{
+    margin-left: 40px;
+}
+
+.pre-view{
+    margin-left: 20px;
+}
