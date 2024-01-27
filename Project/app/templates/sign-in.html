@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{% static 'sign-in.css' %}">
     <h1>Sign In</h1>
     <div class="pre-view">
-        <img src="{% static 'catGif2.gif' %}" alt="cat">
+        <img src="{% static 'pic/catGif2.gif' %}" alt="cat">
     </div>
     <form method="POST" action="{% url 'sign-in' %}" class="two-row-form">
         {% csrf_token %}  
