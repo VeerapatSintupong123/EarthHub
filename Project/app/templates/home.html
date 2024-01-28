@@ -9,7 +9,7 @@
         </div>
         <div class="sign-up">
             <h1>Sign up</h1>
-            <form method="POST" action="{% url 'sign-up' %}">
+            <form method="POST" action="{% url 'home' %}">
                 {% csrf_token %}  
                 {{ form }}
                 <button type="submit">Sign up</button>
